@@ -1,5 +1,5 @@
 # AMLoginSignup
-Animation Login Signup for iPhone
+Login/Signup ViewController for iOS
 
 
 # Preview 
