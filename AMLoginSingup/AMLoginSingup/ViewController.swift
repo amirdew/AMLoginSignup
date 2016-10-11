@@ -57,19 +57,14 @@ class ViewController: UIViewController {
     
     
     //MARK: - controller
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+    
         // set view to login mode
         toggleViewMode(animated: false)
         
-        
         //add keyboard notification
          NotificationCenter.default.addObserver(self, selector: #selector(keyboarFrameChange(notification:)), name: .UIKeyboardWillChangeFrame, object: nil)
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,7 +79,6 @@ class ViewController: UIViewController {
         if mode == .signup {
              toggleViewMode(animated: true)
         }
-    
     }
     
     @IBAction func signupButtonTouchUpInside(_ sender: AnyObject) {
@@ -97,7 +91,6 @@ class ViewController: UIViewController {
     
     
     //MARK: - toggle view
-    
     func toggleViewMode(animated:Bool){
     
         // toggle mode
@@ -115,7 +108,6 @@ class ViewController: UIViewController {
         
         
         //animate
-        
         self.view.endEditing(true)
         
         UIView.animate(withDuration:animated ? animationDuration:0) {
@@ -134,7 +126,6 @@ class ViewController: UIViewController {
             
             var transformLogin = CGAffineTransform(scaleX: scaleLogin, y: scaleLogin)
             transformLogin = transformLogin.rotated(by: rotateAngleLogin)
-            
             self.loginButton.transform = transformLogin
             
             
@@ -144,30 +135,19 @@ class ViewController: UIViewController {
             
             var transformSignup = CGAffineTransform(scaleX: scaleSignup, y: scaleSignup)
             transformSignup = transformSignup.rotated(by: rotateAngleSignup)
-            
             self.signupButton.transform = transformSignup
-            
-            
         }
         
-    
-    
-    
     }
     
     
     //MARK: - keyboard
-    
-    
     func keyboarFrameChange(notification:NSNotification){
-        
         
         let userInfo = notification.userInfo as! [String:AnyObject]
         
-        
         // get top of keyboard in view
         let topOfKetboard = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue .origin.y
-        
         
         
         // get animation curve for animate view like keyboard animation
@@ -208,7 +188,6 @@ class ViewController: UIViewController {
         
         
         // animate constraints changes
-        
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationDuration(animationDuration)
         UIView.setAnimationCurve(animationCurve)
@@ -216,9 +195,6 @@ class ViewController: UIViewController {
         self.view.layoutIfNeeded()
         
         UIView.commitAnimations()
-        
-        
-        
         
     }
     

@@ -55,7 +55,6 @@ import UIKit
     @IBOutlet weak var labelViewHTopExpandConstraint: NSLayoutConstraint!
     
     //MARK: - init
-    
     required init?(coder aDecoder: NSCoder) {
        
         super.init(coder: aDecoder)
@@ -92,7 +91,6 @@ import UIKit
         textFieldView.returnKeyType = .done
         textFieldView.keyboardAppearance = .dark
         backgroundColor = UIColor.clear
-        
     }
     
     
@@ -103,14 +101,11 @@ import UIKit
     
     
     //MARK: - textfield delegate
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         if (textField.text?.lengthOfBytes(using: .utf8))! < 1 {
             setViewExpandMode(expand:true)
         }
-        
-        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -118,10 +113,6 @@ import UIKit
         if (textField.text?.lengthOfBytes(using: .utf8))! < 1 {
             setViewExpandMode(expand:false)
         }
-        
-        
-        
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -133,7 +124,6 @@ import UIKit
     
     
     //MARK: - change view
-    
     private func setViewExpandMode(expand:Bool){
     
         backViewHeightExpandConstraint.priority = expand ? 500:200
@@ -153,11 +143,8 @@ import UIKit
             
                 let leftMargin = (-1 * ((1-scale)*(self.labelView.layer.bounds.size.width))/2 ) - 11;
                 self.labelView.transform = self.labelView.transform.translatedBy(x: leftMargin, y: 0)
-            
             }
-            
         }
-        
     }
     
     
