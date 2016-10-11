@@ -1,16 +1,78 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AMInputView" customModule="AMLoginSingup" customModuleProvider="target">
+            <connections>
+                <outlet property="backViewHeightExpandConstraint" destination="Vcm-u1-hga" id="4gO-qs-o9O"/>
+                <outlet property="backWhiteView" destination="sUG-Dl-kvk" id="GhZ-EI-W7I"/>
+                <outlet property="contentView" destination="tcM-sV-IEL" id="fZ3-sP-tng"/>
+                <outlet property="labelView" destination="OIA-KE-pbf" id="bmT-0M-Ziy"/>
+                <outlet property="labelViewHTopExpandConstraint" destination="G5A-rN-wAh" id="LkU-rc-lUe"/>
+                <outlet property="labelViewLeftExpandConstraint" destination="h9i-ZP-BB8" id="2aa-Pd-ChL"/>
+                <outlet property="labelViewRightExpandConstraint" destination="75m-LJ-1bI" id="1fe-ml-Okz"/>
+                <outlet property="textFieldView" destination="1U2-iu-Mx1" id="1t3-mZ-Nb1"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="298" height="64"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcM-sV-IEL">
+                    <subviews>
+                        <view alpha="0.080000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUG-Dl-kvk">
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="200" constant="2" id="Vcm-u1-hga"/>
+                            </constraints>
+                        </view>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1U2-iu-Mx1">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="0.76935151457055218" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIA-KE-pbf">
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="0.92939992331288346" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="OIA-KE-pbf" secondAttribute="trailing" priority="300" id="75m-LJ-1bI"/>
+                        <constraint firstItem="sUG-Dl-kvk" firstAttribute="width" secondItem="tcM-sV-IEL" secondAttribute="width" id="7VL-bh-LOY"/>
+                        <constraint firstItem="OIA-KE-pbf" firstAttribute="top" secondItem="tcM-sV-IEL" secondAttribute="top" priority="200" id="G5A-rN-wAh"/>
+                        <constraint firstAttribute="trailing" secondItem="OIA-KE-pbf" secondAttribute="trailing" priority="350" constant="26" id="Rj7-Ec-YgP"/>
+                        <constraint firstAttribute="bottom" secondItem="sUG-Dl-kvk" secondAttribute="bottom" id="VCd-9m-9Oh"/>
+                        <constraint firstItem="sUG-Dl-kvk" firstAttribute="leading" secondItem="tcM-sV-IEL" secondAttribute="leading" id="edF-xU-PnB"/>
+                        <constraint firstItem="OIA-KE-pbf" firstAttribute="leading" secondItem="tcM-sV-IEL" secondAttribute="leading" priority="350" constant="26" id="f6a-ZL-IQL"/>
+                        <constraint firstAttribute="bottom" secondItem="1U2-iu-Mx1" secondAttribute="bottom" constant="6" id="gI7-Ay-lNX"/>
+                        <constraint firstItem="OIA-KE-pbf" firstAttribute="centerY" secondItem="tcM-sV-IEL" secondAttribute="centerY" priority="250" id="gmC-bS-TZc"/>
+                        <constraint firstItem="OIA-KE-pbf" firstAttribute="leading" secondItem="tcM-sV-IEL" secondAttribute="leading" priority="300" id="h9i-ZP-BB8"/>
+                        <constraint firstItem="1U2-iu-Mx1" firstAttribute="top" secondItem="tcM-sV-IEL" secondAttribute="top" constant="19" id="ha1-Ja-gYu"/>
+                        <constraint firstAttribute="trailing" secondItem="1U2-iu-Mx1" secondAttribute="trailing" id="q8L-fa-2Si"/>
+                        <constraint firstItem="1U2-iu-Mx1" firstAttribute="leading" secondItem="tcM-sV-IEL" secondAttribute="leading" id="qoB-Na-32L"/>
+                        <constraint firstItem="sUG-Dl-kvk" firstAttribute="height" secondItem="tcM-sV-IEL" secondAttribute="height" priority="250" id="sWh-6E-3bT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstItem="tcM-sV-IEL" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="08u-J6-h54"/>
+                <constraint firstItem="tcM-sV-IEL" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="SZk-ac-TOl"/>
+                <constraint firstItem="tcM-sV-IEL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Xs0-wg-8cK"/>
+                <constraint firstItem="tcM-sV-IEL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iJe-6d-qYD"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="42" y="-39"/>
         </view>
     </objects>
 </document>

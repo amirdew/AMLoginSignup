@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import UIKit
+
+
+extension UIGestureRecognizer{
+    
+    var action:(_ gesture:UIGestureRecognizer)->()!
+
+    class func initWithActionBlock(action:(_ gesture:UIGestureRecognizer)->()){
+    
+    }
+    
+
+}

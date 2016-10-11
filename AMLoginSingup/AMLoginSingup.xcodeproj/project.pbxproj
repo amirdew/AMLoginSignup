@@ -12,16 +12,22 @@
 		ABA51C841DAC9B0C009F209C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA51C821DAC9B0C009F209C /* Main.storyboard */; };
 		ABA51C861DAC9B0C009F209C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA51C851DAC9B0C009F209C /* Assets.xcassets */; };
 		ABA51C891DAC9B0C009F209C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA51C871DAC9B0C009F209C /* LaunchScreen.storyboard */; };
+		ABA51C921DAC9BD3009F209C /* AMInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA51C911DAC9BD3009F209C /* AMInputView.swift */; };
+		ABA51C941DAC9BE1009F209C /* AMInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA51C931DAC9BE1009F209C /* AMInputView.xib */; };
+		ABC09D621DACE05500021BB8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABC09D611DACE05500021BB8 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		ABA51C7B1DAC9B0C009F209C /* AMLoginSingup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMLoginSingup.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABA51C7B1DAC9B0C009F209C /* AMLS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMLS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA51C7E1DAC9B0C009F209C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABA51C801DAC9B0C009F209C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ABA51C831DAC9B0C009F209C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABA51C851DAC9B0C009F209C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABA51C881DAC9B0C009F209C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABA51C8A1DAC9B0C009F209C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABA51C911DAC9BD3009F209C /* AMInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AMInputView.swift; path = AMInputView/AMInputView.swift; sourceTree = "<group>"; };
+		ABA51C931DAC9BE1009F209C /* AMInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AMInputView.xib; path = AMInputView/AMInputView.xib; sourceTree = "<group>"; };
+		ABC09D611DACE05500021BB8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +52,7 @@
 		ABA51C7C1DAC9B0C009F209C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ABA51C7B1DAC9B0C009F209C /* AMLoginSingup.app */,
+				ABA51C7B1DAC9B0C009F209C /* AMLS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,14 +60,25 @@
 		ABA51C7D1DAC9B0C009F209C /* AMLoginSingup */ = {
 			isa = PBXGroup;
 			children = (
+				ABA51C901DAC9BA2009F209C /* AMInputView */,
 				ABA51C7E1DAC9B0C009F209C /* AppDelegate.swift */,
 				ABA51C801DAC9B0C009F209C /* ViewController.swift */,
 				ABA51C821DAC9B0C009F209C /* Main.storyboard */,
-				ABA51C851DAC9B0C009F209C /* Assets.xcassets */,
 				ABA51C871DAC9B0C009F209C /* LaunchScreen.storyboard */,
 				ABA51C8A1DAC9B0C009F209C /* Info.plist */,
+				ABA51C851DAC9B0C009F209C /* Assets.xcassets */,
+				ABC09D611DACE05500021BB8 /* Images.xcassets */,
 			);
 			path = AMLoginSingup;
+			sourceTree = "<group>";
+		};
+		ABA51C901DAC9BA2009F209C /* AMInputView */ = {
+			isa = PBXGroup;
+			children = (
+				ABA51C911DAC9BD3009F209C /* AMInputView.swift */,
+				ABA51C931DAC9BE1009F209C /* AMInputView.xib */,
+			);
+			name = AMInputView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,7 +98,7 @@
 			);
 			name = AMLoginSingup;
 			productName = AMLoginSingup;
-			productReference = ABA51C7B1DAC9B0C009F209C /* AMLoginSingup.app */;
+			productReference = ABA51C7B1DAC9B0C009F209C /* AMLS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -96,6 +113,7 @@
 				TargetAttributes = {
 					ABA51C7A1DAC9B0C009F209C = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4J5W7CJ2ZV;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -124,6 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABA51C891DAC9B0C009F209C /* LaunchScreen.storyboard in Resources */,
+				ABC09D621DACE05500021BB8 /* Images.xcassets in Resources */,
+				ABA51C941DAC9BE1009F209C /* AMInputView.xib in Resources */,
 				ABA51C861DAC9B0C009F209C /* Assets.xcassets in Resources */,
 				ABA51C841DAC9B0C009F209C /* Main.storyboard in Resources */,
 			);
@@ -136,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA51C921DAC9BD3009F209C /* AMInputView.swift in Sources */,
 				ABA51C811DAC9B0C009F209C /* ViewController.swift in Sources */,
 				ABA51C7F1DAC9B0C009F209C /* AppDelegate.swift in Sources */,
 			);
@@ -203,7 +224,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -246,7 +267,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -258,10 +279,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4J5W7CJ2ZV;
 				INFOPLIST_FILE = AMLoginSingup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.amirs.AMLoginSingup;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AMLS;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -270,10 +293,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4J5W7CJ2ZV;
 				INFOPLIST_FILE = AMLoginSingup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.amirs.AMLoginSingup;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AMLS;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -297,6 +322,7 @@
 				ABA51C8F1DAC9B0C009F209C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
