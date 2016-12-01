@@ -55,6 +55,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var socialsView: UIView!
     
     
+    //MARK: - input views
+    @IBOutlet weak var loginEmailInputView: AMInputView!
+    @IBOutlet weak var loginPasswordInputView: AMInputView!
+    @IBOutlet weak var signupEmailInputView: AMInputView!
+    @IBOutlet weak var signupPasswordInputView: AMInputView!
+    @IBOutlet weak var signupPasswordConfirmInputView: AMInputView!
+    
+    
     
     //MARK: - controller
     override func viewDidLoad() {
@@ -78,6 +86,11 @@ class ViewController: UIViewController {
    
         if mode == .signup {
              toggleViewMode(animated: true)
+        
+        }else{
+        
+            //TODO: login by this data
+            NSLog("Email:\(loginEmailInputView.textFieldView.text) Password:\(loginPasswordInputView.textFieldView.text)")
         }
     }
     
@@ -85,6 +98,10 @@ class ViewController: UIViewController {
    
         if mode == .login {
             toggleViewMode(animated: true)
+        }else{
+            
+            //TODO: signup by this data
+            NSLog("Email:\(signupEmailInputView.textFieldView.text) Password:\(signupPasswordInputView.textFieldView.text), PasswordConfirm:\(signupPasswordConfirmInputView.textFieldView.text)")
         }
     }
     

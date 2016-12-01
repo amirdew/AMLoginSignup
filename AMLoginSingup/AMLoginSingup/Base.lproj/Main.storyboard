@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="AMLoginSingup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="AMLS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -27,7 +27,7 @@
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJ0-35-l2X" userLabel="View - login contents">
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9FI-dJ-rEG" userLabel="Input View - email" customClass="AMInputView" customModule="AMLoginSingup" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9FI-dJ-rEG" userLabel="Input View - email" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="cON-U9-pqC"/>
@@ -40,7 +40,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56d-eU-jOn" userLabel="Input View - password" customClass="AMInputView" customModule="AMLoginSingup" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56d-eU-jOn" userLabel="Input View - password" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="2XZ-sp-xyf"/>
@@ -95,7 +95,7 @@
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSH-2V-rzY" userLabel="View - signup contents">
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5B-oc-RNd" userLabel="Input View - email" customClass="AMInputView" customModule="AMLoginSingup" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5B-oc-RNd" userLabel="Input View - email" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="GCc-a8-upv"/>
@@ -108,7 +108,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skc-QG-V4p" userLabel="Input View - password" customClass="AMInputView" customModule="AMLoginSingup" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skc-QG-V4p" userLabel="Input View - password" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="eGq-cf-eFz"/>
@@ -118,7 +118,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7a-qe-QgK" userLabel="Input View - password" customClass="AMInputView" customModule="AMLoginSingup" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7a-qe-QgK" userLabel="Input View - password" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="UcX-nL-eAz"/>
@@ -261,6 +261,8 @@
                         <outlet property="loginButtonTopConstraint" destination="t1O-L1-35n" id="sl4-ed-QiO"/>
                         <outlet property="loginButtonVerticalCenterConstraint" destination="3Hf-jV-YcO" id="MVX-lc-JjA"/>
                         <outlet property="loginContentView" destination="cJ0-35-l2X" id="5ez-Fg-2sr"/>
+                        <outlet property="loginEmailInputView" destination="9FI-dJ-rEG" id="6bH-qF-tNH"/>
+                        <outlet property="loginPasswordInputView" destination="56d-eU-jOn" id="aCD-TY-VeT"/>
                         <outlet property="loginView" destination="8sw-T9-t5g" id="6td-cP-mbC"/>
                         <outlet property="loginWidthConstraint" destination="5g8-qo-Ks1" id="bwN-gK-MCL"/>
                         <outlet property="logoBottomConstraint" destination="JBL-bO-0uw" id="2oj-3r-7yZ"/>
@@ -273,6 +275,9 @@
                         <outlet property="signupButtonTopConstraint" destination="EL0-cn-iAL" id="oHJ-bV-yEK"/>
                         <outlet property="signupButtonVerticalCenterConstraint" destination="bmh-ci-Org" id="hsn-f0-NZL"/>
                         <outlet property="signupContentView" destination="NSH-2V-rzY" id="7bC-Vt-YUD"/>
+                        <outlet property="signupEmailInputView" destination="U5B-oc-RNd" id="TVQ-XP-a8w"/>
+                        <outlet property="signupPasswordConfirmInputView" destination="m7a-qe-QgK" id="2eA-VT-PG0"/>
+                        <outlet property="signupPasswordInputView" destination="skc-QG-V4p" id="b16-9s-8Eu"/>
                         <outlet property="signupView" destination="j0y-e6-LbF" id="Zb1-wS-A9d"/>
                         <outlet property="socialsView" destination="W4f-B5-3w7" id="AI1-R9-6IG"/>
                     </connections>
