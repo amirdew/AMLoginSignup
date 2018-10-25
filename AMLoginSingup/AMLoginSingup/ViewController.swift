@@ -139,7 +139,7 @@ class ViewController: UIViewController {
             
             // rotate and scale login button
             let scaleLogin:CGFloat = self.mode == .login ? 1:0.4
-            let rotateAngleLogin:CGFloat = self.mode == .login ? 0:CGFloat(-M_PI_2)
+            let rotateAngleLogin:CGFloat = self.mode == .login ? 0:CGFloat(-Double.pi/2)
             
             var transformLogin = CGAffineTransform(scaleX: scaleLogin, y: scaleLogin)
             transformLogin = transformLogin.rotated(by: rotateAngleLogin)
@@ -148,7 +148,7 @@ class ViewController: UIViewController {
             
             // rotate and scale signup button
             let scaleSignup:CGFloat = self.mode == .signup ? 1:0.4
-            let rotateAngleSignup:CGFloat = self.mode == .signup ? 0:CGFloat(-M_PI_2)
+            let rotateAngleSignup:CGFloat = self.mode == .signup ? 0:CGFloat(-Double.pi/2)
             
             var transformSignup = CGAffineTransform(scaleX: scaleSignup, y: scaleSignup)
             transformSignup = transformSignup.rotated(by: rotateAngleSignup)
