@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,14 +21,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backImage" translatesAutoresizingMaskIntoConstraints="NO" id="wNm-fq-8bv" customClass="backImage"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backImage" translatesAutoresizingMaskIntoConstraints="NO" id="wNm-fq-8bv" customClass="backImage">
+                                <rect key="frame" x="0.0" y="20" width="750" height="647"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ljo-EX-hUX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8sw-T9-t5g" userLabel="View - signin">
+                                        <rect key="frame" x="0.0" y="0.0" width="330" height="667"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJ0-35-l2X" userLabel="View - login contents">
+                                                <rect key="frame" x="20" y="142" width="290" height="219"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9FI-dJ-rEG" userLabel="Input View - email" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
+                                                        <rect key="frame" x="40" y="8" width="210" height="52"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="cON-U9-pqC"/>
@@ -41,6 +48,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56d-eU-jOn" userLabel="Input View - password" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
+                                                        <rect key="frame" x="40" y="84" width="210" height="52"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="2XZ-sp-xyf"/>
@@ -51,6 +59,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQi-4j-dkl">
+                                                        <rect key="frame" x="83.5" y="181" width="123" height="30"/>
                                                         <state key="normal" title="Forgot Password?">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
@@ -70,6 +79,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXd-lF-yfE">
+                                                <rect key="frame" x="105.5" y="391" width="119" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="57" id="5TT-VR-LEa"/>
                                                     <constraint firstAttribute="width" constant="119" id="F0Z-6F-0ox"/>
@@ -92,10 +102,13 @@
                                         </constraints>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0y-e6-LbF" userLabel="View - signup">
+                                        <rect key="frame" x="330" y="0.0" width="45" height="667"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSH-2V-rzY" userLabel="View - signup contents">
+                                                <rect key="frame" x="-122.5" y="142" width="290" height="220"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5B-oc-RNd" userLabel="Input View - email" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
+                                                        <rect key="frame" x="40" y="8" width="210" height="52"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="GCc-a8-upv"/>
@@ -109,6 +122,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skc-QG-V4p" userLabel="Input View - password" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
+                                                        <rect key="frame" x="40" y="84" width="210" height="52"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="eGq-cf-eFz"/>
@@ -119,6 +133,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7a-qe-QgK" userLabel="Input View - password" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
+                                                        <rect key="frame" x="40" y="160" width="210" height="52"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="UcX-nL-eAz"/>
@@ -144,6 +159,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mp-lc-RtO">
+                                                <rect key="frame" x="-50" y="305" width="145" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="145" id="KhR-8G-2Gc"/>
                                                     <constraint firstAttribute="height" constant="57" id="tY5-TK-anV"/>
@@ -166,20 +182,24 @@
                                         </constraints>
                                     </view>
                                     <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W4f-B5-3w7" userLabel="View - socials">
+                                        <rect key="frame" x="60" y="573" width="210" height="64"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="ZJJ-5Z-Bwc">
+                                                <rect key="frame" x="154" y="2" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="g1P-46-tlt"/>
                                                     <constraint firstAttribute="width" constant="60" id="gNi-Vl-qiN"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linkedin" translatesAutoresizingMaskIntoConstraints="NO" id="CXx-VC-zKs">
+                                                <rect key="frame" x="75" y="2" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="qS1-Ex-fo8"/>
                                                     <constraint firstAttribute="width" constant="60" id="y0C-Zf-Ay2"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="I3h-LK-fNu">
+                                                <rect key="frame" x="-3.5" y="2" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="osw-st-Ox9"/>
                                                     <constraint firstAttribute="height" constant="60" id="uQb-vw-uyl"/>
@@ -199,8 +219,11 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oy1-fw-KpS" userLabel="View - logo">
+                                        <rect key="frame" x="135" y="50" width="60" height="60"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="R9U-Kg-dJj"/>
+                                            <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="R9U-Kg-dJj">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -288,7 +311,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backImage" width="1000" height="548"/>
+        <image name="backImage" width="240" height="131.52000427246094"/>
         <image name="facebook" width="256" height="256"/>
         <image name="linkedin" width="256" height="256"/>
         <image name="logo" width="195" height="195"/>
