@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D8FFB41218325FE00B0AC70 /* IsValid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8FFB40218325FE00B0AC70 /* IsValid.swift */; };
 		ABA51C7F1DAC9B0C009F209C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA51C7E1DAC9B0C009F209C /* AppDelegate.swift */; };
 		ABA51C811DAC9B0C009F209C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA51C801DAC9B0C009F209C /* ViewController.swift */; };
 		ABA51C841DAC9B0C009F209C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA51C821DAC9B0C009F209C /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D8FFB40218325FE00B0AC70 /* IsValid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsValid.swift; sourceTree = "<group>"; };
 		ABA51C7B1DAC9B0C009F209C /* AMLS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMLS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA51C7E1DAC9B0C009F209C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABA51C801DAC9B0C009F209C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D8FFB3F218325CF00B0AC70 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4D8FFB40218325FE00B0AC70 /* IsValid.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		ABA51C721DAC9B0C009F209C = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +70,7 @@
 		ABA51C7D1DAC9B0C009F209C /* AMLoginSingup */ = {
 			isa = PBXGroup;
 			children = (
+				4D8FFB3F218325CF00B0AC70 /* SupportingFiles */,
 				ABA51C901DAC9BA2009F209C /* AMInputView */,
 				ABA51C7E1DAC9B0C009F209C /* AppDelegate.swift */,
 				ABA51C801DAC9B0C009F209C /* ViewController.swift */,
@@ -114,6 +125,7 @@
 					ABA51C7A1DAC9B0C009F209C = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = F2VB86LLAX;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -156,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8FFB41218325FE00B0AC70 /* IsValid.swift in Sources */,
 				ABA51C921DAC9BD3009F209C /* AMInputView.swift in Sources */,
 				ABA51C811DAC9B0C009F209C /* ViewController.swift in Sources */,
 				ABA51C7F1DAC9B0C009F209C /* AppDelegate.swift in Sources */,
@@ -288,7 +301,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "AMLS-Forks-com.theXoder";
 				PRODUCT_NAME = AMLS;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -305,7 +319,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "AMLS-Forks-com.theXoder";
 				PRODUCT_NAME = AMLS;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

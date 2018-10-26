@@ -72,7 +72,7 @@ class ViewController: UIViewController {
         toggleViewMode(animated: false)
         
         //add keyboard notification
-         NotificationCenter.default.addObserver(self, selector: #selector(keyboarFrameChange(notification:)), name: .UIKeyboardWillChangeFrame, object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(keyboarFrameChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -120,8 +120,8 @@ class ViewController: UIViewController {
         
         loginWidthConstraint.isActive = mode == .signup ? true:false
         logoCenterConstraint.constant = (mode == .login ? -1:1) * (loginWidthConstraint.multiplier * self.view.frame.size.width)/2
-        loginButtonVerticalCenterConstraint.priority = mode == .login ? 300:900
-        signupButtonVerticalCenterConstraint.priority = mode == .signup ? 300:900
+        loginButtonVerticalCenterConstraint.priority = UILayoutPriority(rawValue: (mode == .login ? 300.0:900.0))
+        signupButtonVerticalCenterConstraint.priority = UILayoutPriority(rawValue: (mode == .signup ? 300.0:900.0))
         
         
         //animate
@@ -159,23 +159,23 @@ class ViewController: UIViewController {
     
     
     //MARK: - keyboard
-    func keyboarFrameChange(notification:NSNotification){
+    @objc func keyboarFrameChange(notification:NSNotification){
         
         let userInfo = notification.userInfo as! [String:AnyObject]
         
         // get top of keyboard in view
-        let topOfKetboard = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue .origin.y
+        let topOfKetboard = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue .origin.y
         
         
         // get animation curve for animate view like keyboard animation
         var animationDuration:TimeInterval = 0.25
-        var animationCurve:UIViewAnimationCurve = .easeOut
-        if let animDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber {
+        var animationCurve:UIView.AnimationCurve = .easeOut
+        if let animDuration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber {
             animationDuration = animDuration.doubleValue
         }
         
-        if let animCurve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber {
-            animationCurve =  UIViewAnimationCurve.init(rawValue: animCurve.intValue)!
+        if let animCurve = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber {
+            animationCurve =  UIView.AnimationCurve.init(rawValue: animCurve.intValue)!
         }
         
         
@@ -219,6 +219,7 @@ class ViewController: UIViewController {
     
     override var prefersStatusBarHidden: Bool {
         return true
-    }  
+    }
+    
 }
 
