@@ -91,6 +91,8 @@ class ViewController: UIViewController {
         
             //TODO: login by this data
             NSLog("Email:\(String(describing: loginEmailInputView.textFieldView.text)) Password:\(String(describing: loginPasswordInputView.textFieldView.text))")
+            print("is valid login: " + isValidInput(.login).description)
+            
         }
     }
     
@@ -102,7 +104,7 @@ class ViewController: UIViewController {
             
             //TODO: signup by this data
             NSLog("Email:\(String(describing: signupEmailInputView.textFieldView.text)) Password:\(String(describing: signupPasswordInputView.textFieldView.text)), PasswordConfirm:\(String(describing: signupPasswordConfirmInputView.textFieldView.text))")
-        }
+            print("is valid signup: " + isValidInput(.signup).description)        }
     }
     
     
@@ -221,5 +223,60 @@ class ViewController: UIViewController {
         return true
     }
     
+    //shows alert form for invalid input
+    func showAlertForFalseValidInput(_ validationOptions: ValidationOptions){
+        
+        let alertControlerTitle: String
+        let alertControllerMessage: String
+        
+        switch validationOptions {
+        case .email:
+             alertControlerTitle = "Email Address in invalid format"
+             alertControllerMessage = "pleace enter a valid email"
+        case .password:
+            alertControlerTitle = "Password in invalid format"
+            alertControllerMessage = "pleace enter a valid password"
+        case .rePassword:
+            alertControlerTitle = "Password does not match"
+            alertControllerMessage = "pleace enter a valid password"
+        }
+        
+        let alertController = UIAlertController(title: alertControlerTitle , message: alertControllerMessage, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alertController, animated: true)
+    }
+    
+    //input validation
+    private func isValidInput(_ amLoginSignupViewMode: AMLoginSignupViewMode) -> Bool{
+        
+        switch amLoginSignupViewMode {
+        case .login:
+            guard IsValid.email(loginEmailInputView.textFieldView.text!) else {
+                showAlertForFalseValidInput(.email)
+                return false
+            }
+            guard IsValid.password(loginPasswordInputView.textFieldView.text!) else {
+                showAlertForFalseValidInput(.password)
+                return false
+            }
+            return true
+       
+        case .signup:
+            guard IsValid.email(signupEmailInputView.textFieldView.text!) else {
+                showAlertForFalseValidInput(.email)
+                return false
+            }
+            guard IsValid.password(signupPasswordInputView.textFieldView.text!) else {
+                showAlertForFalseValidInput(.password)
+                return false
+            }
+            
+            guard IsValid.rePassword(signupPasswordInputView.textFieldView.text!, signupPasswordConfirmInputView.textFieldView.text!) else {
+                showAlertForFalseValidInput(.rePassword)
+                return false
+            }
+            return true
+        }
+    }
 }
 

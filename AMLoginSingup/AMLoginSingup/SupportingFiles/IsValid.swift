@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum ValidationOptions {
+    case email
+    case password
+    case rePassword
+}
+
 class IsValid {
     
     class func email(_ email: String) -> Bool{
@@ -19,6 +25,13 @@ class IsValid {
     class func password(_ password: String) -> Bool {
         
         guard password.count > 5 else {
+            return false
+        }
+        return true
+    }
+    
+    class func rePassword(_ password: String, _ rePassword: String) -> Bool {
+        guard password == rePassword else {
             return false
         }
         return true

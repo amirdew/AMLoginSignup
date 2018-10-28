@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class AMInputView: UIView,UITextFieldDelegate {
+@IBDesignable class AMInputView: UIView, UITextFieldDelegate {
     
     
     
@@ -146,6 +146,4 @@ import UIKit
             }
         }
     }
-    
-    
 }
