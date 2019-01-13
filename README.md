@@ -1,6 +1,6 @@
 # AMLoginSignup
 Login/Signup ViewController for iOS.<br>
-Write in Xcode8 and Swift3
+Written with Xcode8 and Swift3
 
 Looking for Android version? Checkout repository created by [Irfan Raza](https://twitter.com/irfaan_aa) on Android Studio - [Single page signin and Signup](https://github.com/irfaan008/OnePageSigninSignup)
 
