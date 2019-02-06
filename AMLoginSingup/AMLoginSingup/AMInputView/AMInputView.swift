@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class AMInputView: UIView,UITextFieldDelegate {
+@IBDesignable class AMInputView: UIView, UITextFieldDelegate {
     
     
     
@@ -126,10 +126,10 @@ import UIKit
     //MARK: - change view
     private func setViewExpandMode(expand:Bool){
     
-        backViewHeightExpandConstraint.priority = expand ? 500:200
-        labelViewHTopExpandConstraint.priority = expand ? 500:200
-        labelViewRightExpandConstraint.priority = expand ? 500:300
-        labelViewLeftExpandConstraint.priority = expand ? 999:300
+        backViewHeightExpandConstraint.priority = UILayoutPriority(rawValue: (expand ? 500.0:200.0))
+        labelViewHTopExpandConstraint.priority = UILayoutPriority(rawValue: (expand ? 500.0:200.0))
+        labelViewRightExpandConstraint.priority = UILayoutPriority(rawValue: (expand ? 500.0:300.0))
+        labelViewLeftExpandConstraint.priority = UILayoutPriority(rawValue: (expand ? 999.0:300.0))
         
         UIView.animate(withDuration: animationDuration) {
             self.layoutIfNeeded()
@@ -146,6 +146,4 @@ import UIKit
             }
         }
     }
-    
-    
 }

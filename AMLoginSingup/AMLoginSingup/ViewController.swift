@@ -72,7 +72,7 @@ class ViewController: UIViewController {
         toggleViewMode(animated: false)
         
         //add keyboard notification
-         NotificationCenter.default.addObserver(self, selector: #selector(keyboarFrameChange(notification:)), name: .UIKeyboardWillChangeFrame, object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(keyboarFrameChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,7 +90,9 @@ class ViewController: UIViewController {
         }else{
         
             //TODO: login by this data
-            NSLog("Email:\(loginEmailInputView.textFieldView.text) Password:\(loginPasswordInputView.textFieldView.text)")
+            NSLog("Email:\(String(describing: loginEmailInputView.textFieldView.text)) Password:\(String(describing: loginPasswordInputView.textFieldView.text))")
+            print("is valid login: " + isValidInput(.login).description)
+            
         }
     }
     
@@ -101,8 +103,8 @@ class ViewController: UIViewController {
         }else{
             
             //TODO: signup by this data
-            NSLog("Email:\(signupEmailInputView.textFieldView.text) Password:\(signupPasswordInputView.textFieldView.text), PasswordConfirm:\(signupPasswordConfirmInputView.textFieldView.text)")
-        }
+            NSLog("Email:\(String(describing: signupEmailInputView.textFieldView.text)) Password:\(String(describing: signupPasswordInputView.textFieldView.text)), PasswordConfirm:\(String(describing: signupPasswordConfirmInputView.textFieldView.text))")
+            print("is valid signup: " + isValidInput(.signup).description)        }
     }
     
     
@@ -120,8 +122,8 @@ class ViewController: UIViewController {
         
         loginWidthConstraint.isActive = mode == .signup ? true:false
         logoCenterConstraint.constant = (mode == .login ? -1:1) * (loginWidthConstraint.multiplier * self.view.frame.size.width)/2
-        loginButtonVerticalCenterConstraint.priority = mode == .login ? 300:900
-        signupButtonVerticalCenterConstraint.priority = mode == .signup ? 300:900
+        loginButtonVerticalCenterConstraint.priority = UILayoutPriority(rawValue: (mode == .login ? 300.0:900.0))
+        signupButtonVerticalCenterConstraint.priority = UILayoutPriority(rawValue: (mode == .signup ? 300.0:900.0))
         
         
         //animate
@@ -139,7 +141,7 @@ class ViewController: UIViewController {
             
             // rotate and scale login button
             let scaleLogin:CGFloat = self.mode == .login ? 1:0.4
-            let rotateAngleLogin:CGFloat = self.mode == .login ? 0:CGFloat(-M_PI_2)
+            let rotateAngleLogin:CGFloat = self.mode == .login ? 0:CGFloat(-Double.pi/2)
             
             var transformLogin = CGAffineTransform(scaleX: scaleLogin, y: scaleLogin)
             transformLogin = transformLogin.rotated(by: rotateAngleLogin)
@@ -148,7 +150,7 @@ class ViewController: UIViewController {
             
             // rotate and scale signup button
             let scaleSignup:CGFloat = self.mode == .signup ? 1:0.4
-            let rotateAngleSignup:CGFloat = self.mode == .signup ? 0:CGFloat(-M_PI_2)
+            let rotateAngleSignup:CGFloat = self.mode == .signup ? 0:CGFloat(-Double.pi/2)
             
             var transformSignup = CGAffineTransform(scaleX: scaleSignup, y: scaleSignup)
             transformSignup = transformSignup.rotated(by: rotateAngleSignup)
@@ -159,23 +161,23 @@ class ViewController: UIViewController {
     
     
     //MARK: - keyboard
-    func keyboarFrameChange(notification:NSNotification){
+    @objc func keyboarFrameChange(notification:NSNotification){
         
         let userInfo = notification.userInfo as! [String:AnyObject]
         
         // get top of keyboard in view
-        let topOfKetboard = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue .origin.y
+        let topOfKetboard = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue .origin.y
         
         
         // get animation curve for animate view like keyboard animation
         var animationDuration:TimeInterval = 0.25
-        var animationCurve:UIViewAnimationCurve = .easeOut
-        if let animDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber {
+        var animationCurve:UIView.AnimationCurve = .easeOut
+        if let animDuration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber {
             animationDuration = animDuration.doubleValue
         }
         
-        if let animCurve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber {
-            animationCurve =  UIViewAnimationCurve.init(rawValue: animCurve.intValue)!
+        if let animCurve = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber {
+            animationCurve =  UIView.AnimationCurve.init(rawValue: animCurve.intValue)!
         }
         
         
@@ -219,6 +221,62 @@ class ViewController: UIViewController {
     
     override var prefersStatusBarHidden: Bool {
         return true
-    }  
+    }
+    
+    //shows alert form for invalid input
+    func showAlertForFalseValidInput(_ validationOptions: ValidationOptions){
+        
+        let alertControlerTitle: String
+        let alertControllerMessage: String
+        
+        switch validationOptions {
+        case .email:
+             alertControlerTitle = "Email Address in invalid format"
+             alertControllerMessage = "pleace enter a valid email"
+        case .password:
+            alertControlerTitle = "Password in invalid format"
+            alertControllerMessage = "pleace enter a valid password"
+        case .rePassword:
+            alertControlerTitle = "Password does not match"
+            alertControllerMessage = "pleace enter a valid password"
+        }
+        
+        let alertController = UIAlertController(title: alertControlerTitle , message: alertControllerMessage, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alertController, animated: true)
+    }
+    
+    //input validation
+    private func isValidInput(_ amLoginSignupViewMode: AMLoginSignupViewMode) -> Bool{
+        
+        switch amLoginSignupViewMode {
+        case .login:
+            guard IsValid.email(loginEmailInputView.textFieldView.text!) else {
+                showAlertForFalseValidInput(.email)
+                return false
+            }
+            guard IsValid.password(loginPasswordInputView.textFieldView.text!) else {
+                showAlertForFalseValidInput(.password)
+                return false
+            }
+            return true
+       
+        case .signup:
+            guard IsValid.email(signupEmailInputView.textFieldView.text!) else {
+                showAlertForFalseValidInput(.email)
+                return false
+            }
+            guard IsValid.password(signupPasswordInputView.textFieldView.text!) else {
+                showAlertForFalseValidInput(.password)
+                return false
+            }
+            
+            guard IsValid.rePassword(signupPasswordInputView.textFieldView.text!, signupPasswordConfirmInputView.textFieldView.text!) else {
+                showAlertForFalseValidInput(.rePassword)
+                return false
+            }
+            return true
+        }
+    }
 }
 
